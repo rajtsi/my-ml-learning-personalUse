@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>AI/ML Engineering Roadmap | Learn, Build, Teach</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#16243a;--text:#e8eef8;--muted:#9aabc2;--line:#263750;--blue:#77a9ff;--cyan:#69d4d0;--green:#80d6a5;--amber:#f4c879;--red:#ff9b9b;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(1000px 600px at 75% -10%,#1c3457 0%,transparent 60%),var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1220px;margin:auto;padding:26px 22px 70px}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 0 24px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#6ba7ff,#70d9c8);display:grid;place-items:center;color:#081322;font-weight:900;font-size:17px}
+.tag{font-size:12px;color:var(--cyan);border:1px solid #28565d;border-radius:99px;padding:5px 10px}
+.hero{padding:42px 0 28px;display:grid;grid-template-columns:1.45fr .8fr;gap:28px;align-items:center}.eyebrow{color:var(--cyan);font-size:12px;font-weight:750;letter-spacing:1.5px;text-transform:uppercase}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1.8px;margin:12px 0 16px}.hero p{color:var(--muted);font-size:17px;max-width:720px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:linear-gradient(145deg,#17263d,#101b2c);border:1px solid var(--line);border-radius:14px;padding:17px}.stat b{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 22px}.btn,button{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:10px;cursor:pointer;font:inherit;font-size:13px}.btn.primary,button.primary{background:#28518a;border-color:#3969a8}.btn:hover,button:hover{filter:brightness(1.15)}
+.grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:22px;align-items:start}.sidebar{position:sticky;top:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.sidebar h3{margin:4px 8px 10px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.nav{display:flex;flex-direction:column;gap:4px}.nav a{color:var(--muted);padding:9px 10px;border-radius:9px;font-size:13px}.nav a:hover{background:var(--panel2);color:var(--text);text-decoration:none}
+main{min-width:0}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px}.panel h2{margin:0 0 8px;font-size:23px;letter-spacing:-.4px}.panel h3{font-size:17px;margin:20px 0 7px}.sub{color:var(--muted);margin:0 0 15px}.callout{border-left:3px solid var(--cyan);background:#102a34;padding:12px 15px;border-radius:0 10px 10px 0;color:#cce9e9;margin:14px 0}
+.progressrow{display:flex;align-items:center;gap:12px}.bar{height:9px;background:#26364e;border-radius:99px;overflow:hidden;flex:1}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6ea5ff,#67d3c6);transition:width .25s}.small{font-size:12px;color:var(--muted)}
+.phasegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.phase{background:var(--panel2);border:1px solid var(--line);padding:14px;border-radius:13px}.phase .num{font-size:11px;color:var(--cyan);font-weight:800}.phase b{display:block;margin:5px 0}.phase span{font-size:12px;color:var(--muted)}
+.week{border:1px solid var(--line);border-radius:13px;margin:10px 0;background:#101a2a;overflow:hidden}.week summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;gap:12px;align-items:center}.week summary::-webkit-details-marker{display:none}.week summary:hover{background:#15243a}.wkno{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:10px;background:#203956;color:#b9d4ff;font-weight:800;font-size:12px}.wktitle{flex:1}.wktitle b{display:block}.wktitle small{color:var(--muted)}.due{font-size:11px;color:var(--amber);white-space:nowrap}.weekbody{padding:0 16px 17px 62px;color:#d3deed}.weekbody ul{padding-left:19px}.weekbody li{margin:4px 0}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}.task{background:#142238;border:1px solid var(--line);padding:12px;border-radius:11px}.task h4{margin:0 0 5px;font-size:13px}.task p{margin:0;color:var(--muted);font-size:13px}
+.check{display:flex;align-items:flex-start;gap:9px;margin:8px 0;color:#d9e3f2}.check input{accent-color:#76b5ff;margin-top:5px;width:16px;height:16px}.links{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.resource{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:13px}.resource b{display:block;margin-bottom:4px}.resource p{font-size:12px;color:var(--muted);margin:0 0 7px}.resource small{color:var(--cyan)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--cyan);font-weight:700}td{color:#d1dced}
+input[type=date],input[type=text],textarea{background:#0c1626;color:var(--text);border:1px solid var(--line);padding:9px;border-radius:9px;font:inherit}textarea{width:100%;min-height:100px;resize:vertical}
+footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.sidebar{position:static}.nav{display:grid;grid-template-columns:repeat(2,1fr)}.phasegrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.wrap{padding:16px 13px 50px}.phasegrid,.links,.twocol{grid-template-columns:1fr}.week summary{padding:12px}.weekbody{padding:0 13px 15px}.due{display:none}.stats{max-width:420px}}
+@media print{body{background:#fff;color:#111}.panel,.sidebar,.week,.resource,.stat{background:#fff;color:#111;border-color:#bbb}.sub,.small,.weekbody,.resource p,td{color:#333}.sidebar{display:none}.grid{display:block}.week{break-inside:avoid}.week details{display:block}a{color:#164b91}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">AI</div><div>AI/ML Engineering Roadmap <div class="small">Learn · Build · Teach</div></div></div>
+  <div class="tag">Personal + student curriculum</div>
+</header>
+<section class="hero">
+  <div><div class="eyebrow">A practical 48-week learning plan</div><h1>Understand the model.<br><span style="color:var(--cyan)">Build the system.</span></h1>
+  <p>A paced roadmap for a software engineer moving into AI/ML, with a second track for teaching every topic in accessible Hindi. Around 5–7 hours each week. Learn concepts, implement them, explain them, then publish your notes and practice work.</p></div>
+  <div class="stats">
+    <div class="stat"><b>48</b><span>planned weeks</span></div><div class="stat"><b>5–7h</b><span>weekly commitment</span></div>
+    <div class="stat"><b>6</b><span>learning phases</span></div><div class="stat"><b>2 tracks</b><span>learn + teach</span></div>
+  </div>
+</section>
+<div class="toolbar">
+  <button class="primary" onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="expandAll(true)">Expand all weeks</button><button onclick="expandAll(false)">Collapse all weeks</button>
+  <button onclick="resetProgress()">Reset checklists</button>
+</div>
+<div class="grid">
+<aside class="sidebar">
+  <h3>On this page</h3>
+  <nav class="nav">
+    <a href="#overview">Overview</a><a href="#weekly">Weekly plan</a><a href="#routine">Weekly routine</a><a href="#teaching">Teaching workflow</a><a href="#projects">Projects & milestones</a><a href="#resources">Current resources</a><a href="#quality">Keep it current</a><a href="#notes">My notes</a>
+  </nav>
+  <hr style="border:0;border-top:1px solid var(--line);margin:16px 0">
+  <h3>Progress</h3>
+  <div class="progressrow"><div class="bar"><i id="progressBar"></i></div><b id="progressText">0%</b></div>
+  <div class="small" id="progressCount">0 of 48 weeks completed</div>
+  <hr style="border:0;border-top:1px solid var(--line);margin:16px 0">
+  <label class="small" for="startDate">Plan start date</label><br>
+  <input id="startDate" type="date" value="2026-11-23" style="width:100%;margin-top:7px">
+  <div class="small" style="margin-top:7px">Deadlines are calculated as Sunday at the end of each plan week. Change the start date to shift the schedule.</div>
+</aside>
+<main>
+<section class="panel" id="overview">
+<h2>How to use this roadmap</h2>
+<p class="sub">The plan assumes you already know programming fundamentals from C++/JavaScript. It does not assume you know Python's scientific ecosystem or ML.</p>
+<div class="callout"><b>Guiding rule:</b> Do not rush to LLM frameworks. First learn how data is represented, how a model learns, how to evaluate it, and how to deploy it. Modern AI engineering still depends on these foundations.</div>
+<div class="phasegrid">
+  <div class="phase"><div class="num">PHASE 01 · WEEKS 1–6</div><b>Python for ML</b><span>Python, tooling, NumPy</span></div>
+  <div class="phase"><div class="num">PHASE 02 · WEEKS 7–12</div><b>Math + data</b><span>Linear algebra, probability, Pandas</span></div>
+  <div class="phase"><div class="num">PHASE 03 · WEEKS 13–24</div><b>Classical ML</b><span>Supervised + unsupervised learning</span></div>
+  <div class="phase"><div class="num">PHASE 04 · WEEKS 25–32</div><b>Deep learning</b><span>Neural networks + PyTorch</span></div>
+  <div class="phase"><div class="num">PHASE 05 · WEEKS 33–40</div><b>ML engineering</b><span>Serving, testing, tracking, deployment</span></div>
+  <div class="phase"><div class="num">PHASE 06 · WEEKS 41–48</div><b>LLMs + specialization</b><span>Transformers, RAG, evaluation</span></div>
+</div>
+<h3>Completion standard</h3>
+<p>Mark a week complete only when you have (1) studied the topic, (2) coded or solved the practice, and (3) prepared a student-facing explanation. Watching a lecture alone does not count as completion.</p>
+</section>
+
+<section class="panel" id="weekly">
+<h2>48-week syllabus, deadlines and practice</h2>
+<p class="sub">Open each week for lecture targets, study tasks, practice, teaching preparation and a concrete submission. Use the Sunday deadline as a checkpoint, not as a reason to rush.</p>
+<div id="weeks"></div>
+</section>
+
+<section class="panel" id="routine">
+<h2>Weekly time budget</h2><p class="sub">A repeatable 6-hour schedule. Move days around your work calendar, but keep all four kinds of work.</p>
+<table><thead><tr><th>Session</th><th>Time</th><th>What to do</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>Lecture / reading</td><td>90 min</td><td>Watch the selected university lecture or read official docs. Pause and write questions.</td><td>Notes in your own words</td></tr>
+<tr><td>Code / lab</td><td>120 min</td><td>Reproduce examples, then modify them. Do not just copy a notebook.</td><td>Runnable notebook or script</td></tr>
+<tr><td>Math refresh</td><td>60 min</td><td>Revise only the mathematics used by the current topic.</td><td>Worked examples</td></tr>
+<tr><td>Teach in Hindi</td><td>60 min</td><td>Explain the idea without reading notes. Add a small example and common misconception.</td><td>Hindi lesson outline / recording</td></tr>
+<tr><td>Review + plan</td><td>30 min</td><td>Check tests, write unresolved questions, plan next week.</td><td>Weekly reflection</td></tr>
+</tbody></table>
+<div class="callout">If a week gets busy, protect the coding session and the teaching explanation. Move the deadline rather than skipping understanding.</div>
+</section>
+
+<section class="panel" id="teaching">
+<h2>Student teaching workflow</h2>
+<p class="sub">For every topic you learn, produce a small, consistent teaching pack. This makes the roadmap useful for students who are less comfortable with English lectures.</p>
+<div class="twocol">
+<div class="task"><h4>Before teaching</h4><p>Watch/read the source. Verify definitions, APIs and examples. Write a one-sentence learning objective. List prerequisites.</p></div>
+<div class="task"><h4>During the lesson</h4><p>Explain in conversational Hindi. Keep standard technical vocabulary in English. Start with intuition, then code, then edge cases.</p></div>
+<div class="task"><h4>After the lesson</h4><p>Publish notes, 3–5 practice questions, one worked solution and a short recap. Link the original university material.</p></div>
+<div class="task"><h4>Quality check</h4><p>Run every code block. Check outputs. Label optional/advanced content. Avoid teaching a library API from memory when docs may have changed.</p></div>
+</div>
+<h3>Minimum teaching pack checklist</h3>
+<label class="check"><input type="checkbox" class="persist"> Clear learning outcomes and prerequisites</label>
+<label class="check"><input type="checkbox" class="persist"> Hindi explanation with English technical terms preserved</label>
+<label class="check"><input type="checkbox" class="persist"> At least two examples, including one practical example</label>
+<label class="check"><input type="checkbox" class="persist"> One diagram or visual explanation where useful</label>
+<label class="check"><input type="checkbox" class="persist"> Five practice questions with answers or hints</label>
+<label class="check"><input type="checkbox" class="persist"> Code tested on the current stable toolchain</label>
+<label class="check"><input type="checkbox" class="persist"> Source links, version/date checked and further reading</label>
+</section>
+
+<section class="panel" id="projects">
+<h2>Portfolio projects and phase gates</h2>
+<p class="sub">Do not build ten shallow projects. Build a few projects that show the full workflow and explain your decisions.</p>
+<table><thead><tr><th>When</th><th>Project</th><th>What it demonstrates</th><th>Definition of done</th></tr></thead><tbody>
+<tr><td>Week 6</td><td>Python data utility</td><td>Python, functions, files, tests, NumPy basics</td><td>Clean repo, README, tests and sample input/output</td></tr>
+<tr><td>Week 12</td><td>Exploratory data analysis</td><td>Data cleaning, missing values, visualization, statistical reasoning</td><td>Reproducible notebook and short findings report</td></tr>
+<tr><td>Week 20</td><td>Tabular prediction</td><td>Baseline, train/validation/test split, leakage prevention, metrics</td><td>Compare at least 3 models and explain the choice</td></tr>
+<tr><td>Week 32</td><td>Image classifier</td><td>PyTorch training loop, validation, overfitting, checkpointing</td><td>Reproducible training and error analysis</td></tr>
+<tr><td>Week 40</td><td>Prediction API</td><td>FastAPI, model artifact, input validation, Docker, tests</td><td>Deployed endpoint and documented request/response</td></tr>
+<tr><td>Week 48</td><td>Grounded document assistant</td><td>Embeddings, retrieval, citations, evaluation, safety boundaries</td><td>Evaluation set, failure analysis and working demo</td></tr>
+</tbody></table>
+<h3>Phase exit gates</h3>
+<ul>
+<li><b>After Python:</b> Can write, test and debug small Python programs without translating every line from JavaScript/C++.</li>
+<li><b>After math/data:</b> Can explain vectors, distributions, train/test split and basic data visualization.</li>
+<li><b>After classical ML:</b> Can build a baseline, choose metrics, diagnose overfitting and explain model limitations.</li>
+<li><b>After deep learning:</b> Can write a PyTorch training loop and interpret loss/validation curves.</li>
+<li><b>After engineering:</b> Can package, test, serve and monitor a model as a software service.</li>
+<li><b>After LLM phase:</b> Can explain retrieval, generation, evaluation and when a simpler non-LLM solution is better.</li>
+</ul>
+</section>
+
+<section class="panel" id="resources">
+<h2>University courses and current technical references</h2>
+<p class="sub">Reviewed on 17 November 2026. Prefer current official documentation for APIs and versions. Some university course pages are older but still useful for foundational concepts; the notes below call that out.</p>
+<div class="links">
+<div class="resource"><b>Harvard CS50P · Python</b><p>Python syntax, functions, exceptions, testing, libraries, OOP and file I/O. Good structured starting course.</p><small>Primary · Free materials</small><br><a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener">Course + problem sets ↗</a></div>
+<div class="resource"><b>MIT 6.100L / 6.0001 · Python</b><p>MIT's current introductory programming collection points to 6.100L and 6.0001. Prefer 6.100L if using MIT's newer course path; 6.0001 materials are an older Python version.</p><small>Alternative / reference</small><br><a href="https://ocw.mit.edu/collections/introductory-programming/" target="_blank" rel="noopener">MIT introductory programming ↗</a></div>
+<div class="resource"><b>MIT 6.3900 · Introduction to Machine Learning</b><p>Formerly 6.036. Modeling, prediction, generalization, classification, regression, clustering, sequence learning and reinforcement learning.</p><small>Primary ML university reference</small><br><a href="https://introml.mit.edu/" target="_blank" rel="noopener">MIT 6.3900 current course site ↗</a></div>
+<div class="resource"><b>Stanford CS229 · Machine Learning</b><p>Strong theory reference. Prerequisites include Python/NumPy, probability, linear algebra and multivariable calculus. Some current class resources may require Stanford login; use public SEE materials where accessible.</p><small>Advanced reference</small><br><a href="https://see.stanford.edu/Course/CS229" target="_blank" rel="noopener">Stanford Engineering Everywhere ↗</a> · <a href="https://cs229.stanford.edu/" target="_blank" rel="noopener">Current course site ↗</a></div>
+<div class="resource"><b>MIT 6.S191 · Deep Learning</b><p>2026 materials include deep sequence modeling, computer vision, generative modeling, reinforcement learning and newer topics. Use after classical ML basics.</p><small>Deep learning phase</small><br><a href="https://introtodeeplearning.com/" target="_blank" rel="noopener">2026 course, lectures and labs ↗</a></div>
+<div class="resource"><b>3Blue1Brown · Linear Algebra</b><p>Visual intuition for vectors, matrices, transformations and eigenvectors. Pair videos with written exercises.</p><small>Math support</small><br><a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">Watch series ↗</a></div>
+<div class="resource"><b>Khan Academy · Statistics & Probability</b><p>Refresh descriptive statistics, probability, distributions and inference.</p><small>Math support</small><br><a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" rel="noopener">Study statistics ↗</a></div>
+<div class="resource"><b>NumPy · Official learning</b><p>Arrays, shapes, broadcasting, indexing, vectorization and numerical operations.</p><small>Python data stack</small><br><a href="https://numpy.org/learn/" target="_blank" rel="noopener">NumPy learning ↗</a></div>
+<div class="resource"><b>Pandas · Getting started</b><p>Tabular data, filtering, joins, missing data, grouping and time series basics.</p><small>Python data stack</small><br><a href="https://pandas.pydata.org/docs/getting_started/index.html" target="_blank" rel="noopener">Pandas docs ↗</a></div>
+<div class="resource"><b>Scikit-learn · User Guide</b><p>Preprocessing, pipelines, model selection, cross-validation, metrics and classical estimators. Follow the current stable documentation.</p><small>Classical ML implementation</small><br><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">User guide ↗</a></div>
+<div class="resource"><b>PyTorch · Learn the Basics</b><p>Current beginner workflow: tensors, datasets, transforms, model building, autograd, optimization and saving/loading.</p><small>Deep learning implementation</small><br><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener">Official tutorial ↗</a></div>
+<div class="resource"><b>Hugging Face · LLM Course</b><p>Transformers, tokenizers, datasets, model use and fine-tuning concepts. Use after neural network and attention basics.</p><small>LLM specialization</small><br><a href="https://huggingface.co/learn/llm-course/" target="_blank" rel="noopener">Free LLM course ↗</a></div>
+</div>
+<div class="callout"><b>Course selection:</b> CS50P is the main Python course. Don't complete CS50P and MIT 6.100L in parallel. Use MIT 6.390 for ML foundations, MIT 6.S191 for deep learning, and Stanford CS229 as a deeper theory reference rather than a second full course to rush through.</div>
+</section>
+
+<section class="panel" id="quality">
+<h2>Keep the curriculum current</h2>
+<p class="sub">AI moves quickly. The fundamentals do not need to be rewritten every month, but libraries, recommended workflows and model capabilities do change.</p>
+<h3>What to verify before publishing a lesson</h3>
+<ul>
+<li><b>Python:</b> Check the supported Python version and package installation instructions on the official project site. Avoid hardcoding old version numbers in teaching notes unless the lesson requires them.</li>
+<li><b>Libraries:</b> Verify current stable docs for NumPy, Pandas, Scikit-learn and PyTorch. Record the version used to run examples.</li>
+<li><b>ML practice:</b> Teach leakage prevention, proper train/validation/test separation, baselines, cross-validation where appropriate, class imbalance and meaningful metrics.</li>
+<li><b>Deep learning:</b> Teach tensors, autograd, optimization, data loaders, validation, checkpointing and reproducibility before advanced architectures.</li>
+<li><b>LLMs:</b> Cover tokenization, embeddings, attention, context windows, retrieval, evaluation, tool use and limitations. Don't equate prompt engineering with all of AI engineering.</li>
+<li><b>Deployment:</b> Include input validation, latency/cost, logging, model/data versioning, privacy and monitoring. A notebook alone is not a production system.</li>
+</ul>
+<h3>Source-of-truth policy</h3>
+<p>Use university lecture notes for conceptual teaching. Use official project documentation for APIs and installation. Use papers or technical reports for claims about new methods. Date-stamp claims that may change. If two sources disagree, explain the difference rather than silently choosing one.</p>
+<h3>Freshness log</h3>
+<table><tbody><tr><th>Reviewed</th><td>17 November 2026</td></tr><tr><th>Python course</th><td>Harvard CS50P current official course page; MIT's newer 6.100L path noted alongside older 6.0001 material.</td></tr><tr><th>ML course</th><td>MIT lists the current undergraduate course as 6.3900 (formerly 6.390 / 6.036); the Fall 2026 course site includes recent lectures on representation learning and Transformers.</td></tr><tr><th>Deep learning</th><td>MIT 6.S191 2026 public materials checked.</td></tr><tr><th>Framework docs</th><td>Scikit-learn stable docs and PyTorch tutorials checked.</td></tr></tbody></table>
+<p class="small">A review date is not a promise that every linked page will remain unchanged. Recheck a source when you begin that phase.</p>
+</section>
+
+<section class="panel" id="notes">
+<h2>Personal notes and weekly review</h2>
+<p class="sub">This field is saved in this browser on this device. It is not uploaded or synced.</p>
+<label class="small" for="notesBox">Questions, blockers, ideas for student explanations</label>
+<textarea id="notesBox" placeholder="Example: I understand vector dot product but need another intuition for why it appears in linear regression..."></textarea>
+<div class="toolbar"><button class="primary" onclick="saveNotes()">Save notes on this device</button><span class="small" id="saveStatus"></span></div>
+<h3>Weekly review prompts</h3>
+<ul><li>What can I now explain without looking at notes?</li><li>What did I implement myself?</li><li>Which example confused me, and why?</li><li>What did students find difficult?</li><li>Which source or API needs a freshness check?</li></ul>
+</section>
+</main>
+</div>
+<footer>Built as a static, single-file roadmap. Progress and notes are stored in this browser only. Host the file on GitHub Pages, Cloudflare Pages or any static web host. Educational content is a study plan, not a university credential.</footer>
+</div>
+<script>
+const curriculum = [
+["Python environment and workflow","Install a current supported Python 3 release; understand the interpreter, scripts, REPL, VS Code/Jupyter, virtual environments and pip.","Create a clean project with a venv, requirements file and README. Run a script from terminal and notebook; explain the difference.","Teach: explain interpreter vs notebook, project setup and why virtual environments prevent dependency conflicts.","Submit a reproducible starter repository. Check: can another person clone it and run the script?"],
+["Python values, types and control flow","Variables, numeric/string/bool/None, type conversion, operators, comparisons, conditionals, loops, range and truthiness.","Write a command-line expense categorizer and a number statistics program. Test empty, negative and invalid input.","Teach: explain dynamic typing and truthiness in Hindi. Contrast Python syntax with JavaScript/C++ only where useful.","Submit 10 small exercises with edge cases and expected outputs."],
+["Functions and program design","Parameters, return values, keyword/default arguments, scope, docstrings, decomposition and pure functions.","Build reusable functions for cleaning text, calculating summary statistics and validating input. Add unit tests.","Teach: trace function calls, arguments and return values on a board. Explain why print is not return.","Submit a tested utility module and 5 function-tracing questions."],
+["Core collections","Lists, tuples, dictionaries, sets, mutability, iteration, comprehensions, sorting with key and common complexity trade-offs.","Build a word-frequency counter and a student marks analyser using dictionaries/lists.","Teach: choose a data structure from the problem. Show list vs set membership and dictionary lookup.","Submit collection exercises plus a short note on when to use each structure."],
+["Files, errors, modules and OOP","Read/write text and CSV, JSON, exceptions, modules, imports, classes, objects, dataclasses and basic type hints.","Build a CSV gradebook importer with validation, error reporting and JSON export.","Teach: explain exceptions as expected failure handling; demonstrate class vs function choice.","Submit a small tested CLI tool. Include malformed-file tests."],
+["Testing, debugging and NumPy introduction","pytest/unittest basics, assertions, debugging, package basics; NumPy ndarray, shape, dtype, indexing, vectorization.","Reimplement a few list calculations with NumPy; compare loop and vectorized results. Finish the Python mini-project.","Teach: explain why arrays have shape/dtype and why vectorized operations matter in numerical computing.","Phase gate: a clean repo, tests, NumPy notebook and a 5-minute Hindi explanation."],
+["Vectors and geometry","Scalars, vectors, dimensions, norms, distance, dot product, cosine similarity and geometric interpretation.","Implement vector addition, norms, dot product, Euclidean distance and cosine similarity with NumPy.","Teach: use 2D arrows and examples such as similarity between two document vectors.","Submit worked calculations by hand and verified NumPy outputs."],
+["Matrices and linear transformations","Matrix shape, multiplication, transpose, identity, inverse intuition, linear transformations and solving systems.","Implement matrix operations with NumPy; solve a small linear system and visualize a 2D transformation.","Teach: explain matrix multiplication as composition/transforming vectors, not just a row-column recipe.","Submit a notebook with diagrams, shape annotations and 5 practice problems."],
+["Probability foundations","Events, sample spaces, conditional probability, independence, Bayes' theorem and base rates.","Simulate coin/dice events and conditional probability using Python. Solve Bayes examples by hand.","Teach: explain conditional probability using medical-test or spam-filter examples, including base-rate intuition.","Submit simulation notebook and a quiz with worked solutions."],
+["Statistics and distributions","Mean, median, variance, standard deviation, quantiles, outliers, normal/binomial distributions, sampling and correlation vs causation.","Explore a public dataset. Calculate descriptive statistics and compare distributions using plots.","Teach: explain spread and distributions visually; show why average alone can mislead.","Submit a short exploratory report with charts and careful claims."],
+["Calculus for learning","Functions, derivatives, partial derivatives, chain rule, gradients and the meaning of slope in optimization.","Plot a simple loss function and approximate its derivative numerically; compare with an analytic derivative.","Teach: explain derivative as local sensitivity, then gradient as direction of steepest increase.","Submit a notebook showing numerical vs analytic derivative."],
+["Optimization and data preparation","Gradient descent intuition, learning rate, loss surface; Pandas Series/DataFrame, missing values, joins, groupby and train/test split concept.","Clean a dataset with Pandas; implement gradient descent for a one-variable function.","Teach: explain why a model needs a loss function and why data cleaning changes model outcomes.","Phase gate: reproducible EDA notebook and a math/data concept review."],
+["What is machine learning?","Problem framing, features/labels, supervised vs unsupervised vs reinforcement learning, baseline, generalization and workflow.","Take one tabular problem and define target, features, baseline and evaluation metric before training.","Teach: distinguish rules-based software from learned patterns; discuss where ML is not needed.","Submit a one-page problem framing document and baseline proposal."],
+["Linear regression","Hypothesis, parameters, MSE/MAE, residuals, closed-form intuition, gradient descent, assumptions and limitations.","Implement simple linear regression from scratch with NumPy; compare with Scikit-learn.","Teach: explain line fitting, residuals and loss with a small hand-worked dataset.","Submit notebook with from-scratch and library results."],
+["Multiple regression and regularization","Multiple features, feature scaling, categorical encoding, multicollinearity intuition, Ridge and Lasso.","Predict a numeric target. Build preprocessing pipeline; compare unregularized, Ridge and Lasso models.","Teach: explain why more features can hurt and how regularization constrains model complexity.","Submit experiment table and residual/error analysis."],
+["Classification and logistic regression","Class probabilities, sigmoid, decision threshold, log loss, confusion matrix, precision, recall, F1 and ROC-AUC.","Build a binary classifier. Evaluate threshold trade-offs and class imbalance.","Teach: explain why accuracy can be misleading for imbalanced classes with a concrete example.","Submit a classifier notebook and a metric-selection explanation."],
+["K-nearest neighbors and distance","Distance metrics, scaling, choice of k, decision boundaries, curse of dimensionality and lazy learning.","Implement a simple KNN classifier; compare scaled vs unscaled features and several k values.","Teach: explain KNN by analogy to nearby examples; show why scale matters.","Submit experiment notebook and explain a failure case."],
+["Decision trees and ensembles","Splits, impurity (Gini/entropy), depth, pruning, random forests, bagging and feature importance caveats.","Train decision tree and random forest models; compare validation scores and inspect overfitting.","Teach: draw a small decision tree and calculate a simple impurity example.","Submit model comparison with depth/overfit discussion."],
+["Support vector machines and kernels","Margins, support vectors, linear SVM, kernel intuition, scaling and hyperparameter tuning.","Compare linear and RBF SVM on a modest dataset; tune C and gamma with cross-validation.","Teach: explain maximum margin visually; describe kernels as similarity functions without claiming magic.","Submit plots and a short note on computational trade-offs."],
+["Model evaluation and validation","Train/validation/test roles, cross-validation, stratification, data leakage, pipelines, calibration and confidence limits.","Build a leakage-safe pipeline with preprocessing inside cross-validation. Compare a naive split with correct evaluation.","Teach: explain leakage using an example where information from the future enters training.","Phase gate: end-to-end tabular ML project with baseline, metrics and error analysis."],
+["Unsupervised learning","K-means, clustering assumptions, scaling, inertia, silhouette score, PCA and dimensionality reduction intuition.","Cluster a dataset; visualize with PCA while clearly separating visualization from proof of cluster quality.","Teach: explain clustering without labels and why clusters are not automatically meaningful categories.","Submit clustering analysis with limitations and a business interpretation."],
+["Feature engineering and imbalanced data","Missingness, categorical features, transformations, feature selection, class weights, resampling caveats and threshold tuning.","Improve a classification project with a documented feature pipeline. Avoid leakage when resampling.","Teach: compare feature engineering to representing a problem more usefully for a model.","Submit before/after experiments and explain which changes actually helped."],
+["Responsible ML and reproducibility","Bias, fairness, privacy, explainability, dataset documentation, random seeds, experiment tracking basics and limitations.","Audit a model for subgroup performance and document dataset provenance/limitations.","Teach: explain that a high score does not prove a model is fair or safe.","Submit a model card-style report with intended use, limitations and risk notes."],
+["Classical ML capstone","Integrate framing, data validation, baseline, pipelines, model selection, metrics and interpretation.","Complete a full tabular prediction project. Compare at least three suitable models and justify final selection.","Teach: deliver a Hindi walkthrough from raw dataset to evaluation, including mistakes encountered.","Phase gate: reproducible project repo, README, report, notebook and teaching pack."],
+["Neural network foundations","Perceptron, layers, weights, biases, activation functions, logits, loss functions and tensor shapes.","Implement a tiny feed-forward network with NumPy for a toy dataset; inspect intermediate activations.","Teach: explain a neuron as weighted inputs plus activation; distinguish intuition from biological neurons.","Submit hand-drawn network and a small forward-pass calculation."],
+["Backpropagation and gradient descent","Computational graphs, chain rule, gradients, backpropagation, SGD, mini-batches, learning rate and optimizers.","Derive gradients for a tiny network or follow a verified educational implementation; compare finite differences.","Teach: trace how an output error contributes to parameter updates. Avoid treating backprop as a black box.","Submit a gradient-check exercise and optimization notes."],
+["PyTorch tensors and autograd","Tensors, shapes, devices, dtype, broadcasting, autograd, Dataset and DataLoader using current official tutorials.","Complete PyTorch beginner tensor/autograd exercises. Run a small notebook on CPU first.","Teach: explain tensor shape at every layer and show how autograd builds gradients.","Submit runnable notebook and shape-tracing worksheet."],
+["Build and train a neural network","nn.Module, forward pass, loss, optimizer, training loop, validation loop, batch size and checkpointing.","Train a small classifier on a standard dataset; plot train and validation loss/accuracy.","Teach: explain the training loop step by step: forward, loss, zero gradients, backward, update.","Submit model code, plots and a note explaining signs of overfitting."],
+["Generalization and regularization","Train/validation curves, weight decay, dropout, early stopping, data augmentation and normalization.","Run controlled experiments changing one regularization technique at a time.","Teach: explain underfitting vs overfitting using curves and real examples.","Submit experiment log with fair comparisons."],
+["Convolutional neural networks","Convolution, filters, channels, padding, stride, pooling, receptive field and image augmentation.","Train a small CNN on a manageable image dataset. Inspect correct and incorrect predictions.","Teach: use a visual filter example; explain what convolution computes without claiming a CNN understands images like a person.","Submit image classifier with error gallery."],
+["Sequence models and attention overview","Sequence data, embeddings, RNN/LSTM historical context, attention, self-attention and why Transformers became dominant.","Implement or inspect a small sequence model; visualize attention weights from a teaching example with caveats.","Teach: explain sequence context and attention with a tiny token example.","Submit comparison note: recurrent models vs attention-based models."],
+["Deep learning capstone","Data pipeline, architecture choice, training, validation, error analysis, reproducibility and model saving.","Finish a PyTorch image or tabular neural-network project. Record environment and random seeds.","Teach: deliver a full Hindi lesson on training a neural network and interpreting its curves.","Phase gate: reproducible PyTorch project, evaluation and teaching video/notes."],
+["ML system lifecycle","Batch vs online inference, training-serving skew, model artifact, feature pipeline, data contracts and system boundaries.","Draw architecture for a model-backed application; identify failure points and data dependencies.","Teach: explain why a trained notebook is not yet a usable ML product.","Submit architecture diagram and operational checklist."],
+["Build a prediction API","FastAPI routes, request/response schemas, input validation, model loading, error handling and API tests.","Serve the classical ML capstone model through a FastAPI endpoint. Add tests for invalid inputs.","Teach: explain the journey from JSON request to validated features to prediction response.","Submit API repo, OpenAPI docs and test output."],
+["Packaging and containers","Dependency pinning, environment management, Docker image, configuration, secrets handling and reproducible builds.","Containerize the prediction API; run locally with documented commands.","Teach: explain why it works on one machine but fails on another, and how containers help.","Submit Dockerfile, .dockerignore and reproducible run instructions."],
+["Experiment tracking and model versioning","Experiment metadata, parameters, metrics, artifacts, model registry concepts and data/model versioning.","Track experiments with MLflow or a comparable maintained tool. Compare runs and save model artifacts.","Teach: explain why a metric without code/data/config context is not reproducible.","Submit experiment comparison and artifact lineage."],
+["Testing and monitoring ML services","Unit/integration tests, schema checks, latency, logs, drift concepts, data quality and alert design.","Add input schema tests, health endpoint, structured logs and simple latency measurement.","Teach: distinguish software errors, data quality issues and model quality degradation.","Submit tested service and a monitoring plan."],
+["Deployment and operational review","Static vs dynamic hosting, cloud deployment, CI checks, environment variables, privacy and cost controls.","Deploy the model API to a suitable free/low-cost host or document a local deployment if free tiers change.","Teach: explain deployment architecture and operational trade-offs, not just button clicks.","Phase gate: accessible demo or reproducible deployment guide, tests and architecture notes."],
+["CI/CD for ML applications","Continuous integration, automated tests, build pipelines, deployment promotion, environment configuration and rollback strategy.","Add a GitHub Actions workflow to run tests and build the prediction service on every pull request. Document how a release is promoted.","Teach: explain the difference between pushing code and safely releasing a model-backed service.","Submit a working CI workflow, test badge or build log, and release checklist."],
+["Model and data monitoring in production","Data quality checks, feature drift, prediction monitoring, delayed labels, alert thresholds, retraining triggers and human review.","Design a monitoring dashboard or local simulation that tracks input distributions, prediction rates and service health. Avoid claiming drift automatically means model quality has fallen.","Teach: explain data drift vs concept drift vs performance degradation using examples.","Submit monitoring design, sample metrics and an incident response note."],
+["Tokenization and language models","Tokenization, subwords, vocabulary, embeddings, next-token prediction, pretraining and inference.","Use a small tokenizer/model demo. Inspect token IDs and how text length changes.","Teach: explain tokens are not always words; show a sentence split into tokens.","Submit tokenizer notebook and terminology sheet."],
+["Attention and Transformers","Queries, keys, values, attention scores, positional information, multi-head attention, encoder/decoder and causal masking.","Work through a tiny attention calculation and a small Transformer tutorial. Draw tensor shapes.","Teach: explain attention with a short sentence and a toy numerical example.","Submit attention walkthrough and shape diagram."],
+["Using pretrained models responsibly","Model cards, licenses, model selection, inference pipelines, hardware needs, quantization concepts and limitations.","Run a small pretrained model from a reputable model hub. Record model ID, revision, license and resource needs.","Teach: distinguish using a pretrained model from training one from scratch.","Submit reproducible inference demo and model-use checklist."],
+["Embeddings and semantic retrieval","Embedding models, vector similarity, chunking, metadata filters, retrieval quality and vector indexes.","Build a small semantic search over a few public documents. Compare chunk sizes and retrieval results.","Teach: explain embedding as a numerical representation, and similarity as a useful but imperfect signal.","Submit retrieval demo with a small manually checked query set."],
+["RAG system design","Ingestion, chunking, embedding, indexing, retrieval, context construction, generation, citations and failure modes.","Build a basic RAG prototype over a bounded document collection. Return source references and say when evidence is missing.","Teach: explain the RAG pipeline and why retrieval does not guarantee a correct answer.","Submit demo, architecture diagram and 10-question evaluation set."],
+["LLM evaluation and safety","Groundedness, relevance, retrieval recall, answer correctness, hallucinations, prompt injection, privacy, refusal and human review.","Evaluate the RAG prototype on a fixed test set. Record failures and test adversarial or unanswerable questions.","Teach: explain why a few impressive demos are not enough to establish quality.","Submit evaluation report with failure categories and mitigations."],
+["Fine-tuning and adaptation choices","Prompting vs RAG vs fine-tuning, supervised fine-tuning concepts, parameter-efficient tuning/LoRA, data quality and cost.","Compare approaches conceptually; optionally run a small PEFT tutorial if compute and dataset allow.","Teach: explain which problem each approach solves and why fine-tuning is not a substitute for fresh facts.","Submit decision matrix and a small experiment or documented design."],
+["AI product capstone and specialization","Integrate data, model, retrieval or inference, API, UI, evaluation, observability, privacy and documentation.","Build a bounded AI application with a clear user problem. Include evaluation data, limitations and cost/latency notes.","Teach: present the project in Hindi and English technical vocabulary; explain design decisions and known failures.","Final gate: public repo, demo, reproducible setup, evaluation report, architecture diagram and teaching pack."]
+];
+
+function dateForWeek(n){const v=document.getElementById('startDate').value;const start=v?new Date(v+'T12:00:00'):new Date('2026-11-23T12:00:00');const end=new Date(start);end.setDate(start.getDate()+n*7-1);return end.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});}
+function renderWeeks(){const host=document.getElementById('weeks');host.innerHTML='';curriculum.forEach((w,i)=>{const n=i+1;const d=document.createElement('details');d.className='week';d.id='week-'+n;d.innerHTML=`<summary><div class="wkno">${String(n).padStart(2,'0')}</div><div class="wktitle"><b>${w[0]}</b><small>${n<=6?'Python for ML':n<=12?'Math + data':n<=24?'Classical ML':n<=32?'Deep learning':n<=40?'ML engineering':'LLMs + specialization'}</small></div><div class="due">Due: ${dateForWeek(n)}</div><span class="small">⌄</span></summary><div class="weekbody"><div class="twocol"><div class="task"><h4>Study target</h4><p>${w[1]}</p></div><div class="task"><h4>Practice / lab</h4><p>${w[2]}</p></div><div class="task"><h4>Teach your students</h4><p>${w[3]}</p></div><div class="task"><h4>Weekly submission</h4><p>${w[4]}</p></div></div><label class="check"><input type="checkbox" class="weekcheck" data-week="${n}"> I completed this week: study + practice + Hindi teaching pack</label><div class="small">Deadline: ${dateForWeek(n)} · Target effort: 5–7 hours</div></div>`;host.appendChild(d);});document.querySelectorAll('.weekcheck').forEach(c=>{c.checked=localStorage.getItem('aiml-week-'+c.dataset.week)==='1';c.addEventListener('change',()=>{localStorage.setItem('aiml-week-'+c.dataset.week,c.checked?'1':'0');updateProgress();});});updateProgress();}
+function updateProgress(){const done=document.querySelectorAll('.weekcheck:checked').length;document.getElementById('progressBar').style.width=(done/48*100)+'%';document.getElementById('progressText').textContent=Math.round(done/48*100)+'%';document.getElementById('progressCount').textContent=done+' of 48 weeks completed';}
+function expandAll(v){document.querySelectorAll('.week').forEach(d=>d.open=v);}
+function resetProgress(){if(!confirm('Reset all 48 weekly completion checkboxes?'))return;for(let i=1;i<=48;i++)localStorage.removeItem('aiml-week-'+i);document.querySelectorAll('.weekcheck').forEach(c=>c.checked=false);updateProgress();}
+document.getElementById('startDate').addEventListener('change',renderWeeks);
+function saveNotes(){localStorage.setItem('aiml-notes',document.getElementById('notesBox').value);document.getElementById('saveStatus').textContent='Saved in this browser.';}
+document.getElementById('notesBox').value=localStorage.getItem('aiml-notes')||'';
+document.querySelectorAll('.persist').forEach((c,i)=>{c.checked=localStorage.getItem('aiml-teach-'+i)==='1';c.addEventListener('change',()=>localStorage.setItem('aiml-teach-'+i,c.checked?'1':'0'));});
+renderWeeks();
+</script>
+</body>
+</html>
